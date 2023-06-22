@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../../fonts/Ubuntu-Regular.ttf), url(../../fonts/Ubuntu-Medium.ttf), url(../../fonts/Ubuntu-Bold.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../../fonts/Ubuntu-Medium.ttf), url(../../fonts/Ubuntu-Regular.ttf), url(../../fonts/Ubuntu-Bold.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Ubuntu';
+  src: url(../../fonts/Ubuntu-Bold.ttf), url(../../fonts/Ubuntu-Regular.ttf), url(../../fonts/Ubuntu-Medium.ttf);
+  font-weight: 700;
+}
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.title {
+  color: $Marine-blue;
+  font-weight: 700;
+}
+
+.text {
+  margin-bottom: .1rem;
+
+  color: $Cool-gray;
+}

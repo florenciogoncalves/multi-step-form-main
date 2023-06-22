@@ -1,0 +1,77 @@
+@import "colors";
+@import "fonts";
+
+html,
+body {
+	height: 100%;
+
+  background-color: $Magnolia;
+}
+
+.main {
+	position: relative;
+}
+
+.sidebar {
+	width: 100%;
+	.steps {
+		position: relative;
+		list-style: none;
+		padding: 2rem 0;
+
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		.step {
+			width: 2.35rem;
+			height: 2.35rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			border: 2px solid $Light-gray;
+
+			font-weight: 700;
+			color: $Magnolia;
+			&.active {
+				border: none;
+
+				color: $Marine-blue;
+
+				background-color: $Light-blue;
+			}
+		}
+	}
+}
+.content-area {
+  .content-area-main {
+    padding: 1.5rem;
+  
+    background-color: $White;
+    .label {
+      font-size: .9rem;
+      font-weight: 500;
+      color: $Marine-blue
+    }
+    .input {
+      &::placeholder {
+        color: $Cool-gray;
+      }
+    }
+  }
+  .buttons-container {
+    background-color: $White;
+  }
+}
+// Global styles
+.button-dark {
+  font-weight: 500;
+  color: $White;
+
+  background-color: $Marine-blue;
+}
+.input {
+  border: 1px solid $Light-gray;
+}
+// Responsive
+@import "responsive";
