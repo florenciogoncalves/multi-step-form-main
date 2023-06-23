@@ -11,17 +11,18 @@
 		<link rel="stylesheet" href="./assets/style/css/bootstrap.min.css" />
 		<link rel="stylesheet" href="./assets/style/css/style.css" />
 	</head>
-	<body>
-		<div class="main d-flex flex-column h-100">
+	<body class="d-flex flex-column">
+		<div
+			class="main d-flex flex-column h-100 col-md-10 col-lg-9 col-xl-8 col-xxl-7 m-md-auto p-md-3 rounded-4 pe-md-0">
 			<img
 				src="./assets/images/bg-sidebar-mobile.svg"
 				alt="mobile-sidebar"
-				class="sidebar-image-mobile d-md-none col-12 col-md-2 bg-dark position-absolute" />
-			<div class="sidebar">
+				class="sidebar-image-mobile d-md-none col-12 position-absolute" />
+			<div class="sidebar d-md-block col-md-5 rounded-4">
 				<img
 					src="./assets/images/bg-sidebar-desktop.svg"
 					alt="desktop-sidebar"
-					class="sidebar-image-desktop d-none d-md-flex" />
+					class="sidebar-image-desktop d-none d-md-block col-12 img-fluid h-100 w-100" />
 				<ul class="steps mx-auto mb-0">
 					<li class="step active">
 						1
@@ -41,44 +42,53 @@
 						3
 						<div class="about d-none d-md-flex">
 							<p class="header-text">step 3</p>
-							<p class="desc-text"></p>
-							add-ons
+							<p class="desc-text">add-ons</p>
 						</div>
 					</li>
 					<li class="step">
 						4
 						<div class="about d-none d-md-flex">
 							<p class="header-text">step 4</p>
-							<p class="desc-text"></p>
-							summary
+							<p class="desc-text">summary</p>
 						</div>
 					</li>
 				</ul>
 			</div>
-			<form class="content-area position-relative d-flex flex-column h-100">
-				<div class="container">
+			<form
+				class="content-area position-relative d-flex flex-column h-100 col-md-12 mx-md-auto px-md-4">
+				<div class="content-width h-100 d-flex flex-column px-md-2 pt-md-3 pt-lg-4">
+          <div class="container p-md-0 p-md-0 px-lg-5">
 					<div class="content-area-main shadow-sm rounded-3">
 						<h1 class="title">Personal info</h1>
 						<p class="text pb-3">
 							Please provide your name, email address, and phone number.
 						</p>
-						<div class="d-flex flex-column gap-3 w-100 mb-2">
+						<div class="d-flex flex-column gap-3 gap-md-4 w-100 mb-2">
 							<div class="form-group">
-								<div class="label d-flex justify-content-between">Name <span class="alert-text d-none">This field is required</span></div>
+								<div class="label d-flex justify-content-between">
+									Name
+									<span class="alert-text d-none">This field is required</span>
+								</div>
 								<input
 									class="input rounded-1 px-3 py-2 w-100"
 									type="text"
 									placeholder="e.g. Stephen King" />
 							</div>
 							<div class="form-group">
-								<div class="label d-flex justify-content-between">Email Address <span class="alert-text d-none">This field is required</span></div>
+								<div class="label d-flex justify-content-between">
+									Email Address
+									<span class="alert-text d-none">This field is required</span>
+								</div>
 								<input
 									class="input rounded-1 px-3 py-2 w-100"
 									type="email"
 									placeholder="e.g. stephenking@lorem.com" />
 							</div>
 							<div class="form-group">
-								<div class="label d-flex justify-content-between">Phone Number <span class="alert-text d-none">This field is required</span></div>
+								<div class="label d-flex justify-content-between">
+									Phone Number
+									<span class="alert-text d-none">This field is required</span>
+								</div>
 								<input
 									class="input rounded-1 px-3 py-2 w-100"
 									type="tel"
@@ -87,11 +97,12 @@
 						</div>
 					</div>
 				</div>
-				<div class="buttons-container mt-auto p-3 d-flex flex-row">
+				<div class="buttons-container mt-auto p-3 d-flex flex-row px-lg-5">
 					<button class="btn button-dark ms-auto px-3 py-2" type="submit">
 						Next Step
 					</button>
 				</div>
+        </div>
 			</form>
 		</div>
 	</body>

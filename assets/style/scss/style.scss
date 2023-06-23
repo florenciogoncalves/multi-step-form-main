@@ -13,7 +13,6 @@ body {
 }
 
 .sidebar {
-	width: 100%;
 	.steps {
 		position: relative;
 		list-style: none;
@@ -72,6 +71,12 @@ body {
 }
 .input {
   border: 1px solid $Light-gray;
+  outline: none;
+  color: $Marine-blue;
+  font-weight: 500;
+  &:focus {
+    border-color: $Pastel-blue
+  }
 }
 // Responsive
 @import "responsive";

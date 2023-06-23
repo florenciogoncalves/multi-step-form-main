@@ -1,9 +1,69 @@
 // md
-@media only screen and (min-width: 768px){
-  .main {
-    display: flex;
-    flex-direction: row;
-  
-    background-color: $White;
+@media only screen and (min-width: 768px) {
+	.main {
+		height: auto !important;
+		display: grid !important;
+		grid-template-columns: auto 1fr;
+		flex-direction: row !important;
+		position: relative;
+		background-color: $White;
+		.sidebar {
+			height: 100%;
+			width: 100%;
+			position: relative;
+			.steps {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				flex-direction: column;
+				padding: 3rem 2rem;
+				gap: 2rem;
+				.step {
+					position: relative;
+					.about {
+						position: absolute;
+						width: max-content;
+						display: flex;
+						flex-direction: column;
+						left: calc(100% + 1.25rem);
+						top: 50%;
+						transform: translateY(-50%);
+						.header-text,
+						.desc-text {
+							margin: 0 !important;
+							text-transform: uppercase;
+							font-size: 0.9rem;
+							&.header-text {
+								color: $Cool-gray;
+                font-size: .8rem;
+								font-weight: 400;
+							}
+							&.desc-text {
+								color: $Light-gray;
+							}
+						}
+					}
+				}
+			}
+		}
+		.content-area {
+			.content-area-main {
+				box-shadow: none !important;
+				height: 100%;
+				padding: 0;
+				background: none;
+			}
+			.buttons-container {
+				background: none;
+			}
+		}
+	}
+	.input {
+		border-radius: 0.4rem !important;
+	}
+  .label {
+    margin-bottom: .2rem;
+    font-weight: 500;
   }
 }
