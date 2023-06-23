@@ -53,6 +53,12 @@
 				height: 100%;
 				padding: 0;
 				background: none;
+        .options {
+          grid-template-columns: repeat(3, 1fr);
+          .option {
+            flex-direction: column;
+          }
+        }
 			}
 			.buttons-container {
 				background: none;

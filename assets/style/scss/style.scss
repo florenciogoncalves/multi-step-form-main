@@ -5,7 +5,7 @@ html,
 body {
 	height: 100%;
 
-  background-color: $Magnolia;
+	background-color: $Magnolia;
 }
 
 .main {
@@ -43,112 +43,121 @@ body {
 	}
 }
 .content-area {
-  .content-area-main {
-    padding: 1.5rem;
-  
-    background-color: $White;
-    .label {
-      font-size: .9rem;
-      font-weight: 500;
-      color: $Marine-blue
-    }
-    .input {
-      &::placeholder {
-        color: $Cool-gray;
-      }
-    }
-  }
-  .buttons-container {
-    background-color: $White;
-  }
+	.content-area-main {
+		padding: 1.5rem;
+
+		background-color: $White;
+		.label {
+			font-size: 0.9rem;
+			font-weight: 500;
+			color: $Marine-blue;
+		}
+		.input {
+			&::placeholder {
+				color: $Cool-gray;
+			}
+		}
+	}
+	.buttons-container {
+		background-color: $White;
+	}
 }
 .options {
-  .option {
-    width: 100%;
-    position: relative;
-    display: flex;
-    align-items: flex-start;
-    .input-radio {
-      appearance: none;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border: 1.5px solid $Light-gray;
-      &:checked {
-        border-color: $Pastel-blue;
-        background-color: rgba($color: $Pastel-blue, $alpha: .1);
-      }
-    }
-    .option-caption {
-      display: flex;
-      flex-direction: column;
-      * {
-        margin: 0;
-      }
-      ._title {
-        color: $Marine-blue;
-        font-weight: 700;
-      }
-      ._value {
-        color: $Cool-gray;
-      }
-      .yearly-promotion {
-        color: $Marine-blue;
-        font-size: .8rem;
-        font-weight: 500;
-      }
-    }
-  }
+	.option {
+		width: 100%;
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+		.input-radio {
+			appearance: none;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border: 1.5px solid $Light-gray;
+			&:checked {
+				border-color: $Purplish-blue;
+				background-color: rgba($color: $Purplish-blue, $alpha: 0.1);
+			}
+		}
+		.option-caption {
+			display: flex;
+			flex-direction: column;
+			* {
+				margin: 0;
+			}
+			._title {
+				color: $Marine-blue;
+				font-weight: 700;
+			}
+			._value {
+				color: $Cool-gray;
+			}
+			.yearly-promotion {
+				color: $Marine-blue;
+				font-size: 0.8rem;
+				font-weight: 500;
+        display: none;
+			}
+		}
+	}
 }
 .switch-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba($color: $Pastel-blue, $alpha: .1);
-  .monthly-text {
-    font-weight: 700;
-    color: $Marine-blue;
-  }
-  .switch {
-    height: 1.285rem;
-    width: 2.5rem;
-    padding: .25rem;
-    border-radius: .75rem;
-    background: $Marine-blue;
-    .dot {
-      appearance: none;
-      display: flex;
-      width: .815rem;
-      height: .815rem;
-      border-radius: 50%;
-      background: $White;
-      &:checked {
-        margin-left: auto;
-      }
-    }
-  }
-  .yearly-text {
-    font-weight: 700;
-    color: $Cool-gray;
-  }
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba($color: $Pastel-blue, $alpha: 0.1);
+	.monthly-text {
+		font-weight: 700;
+		color: $Marine-blue;
+	}
+	.switch {
+		height: 1.285rem;
+		width: 2.5rem;
+		padding: 0.25rem;
+		border-radius: 0.75rem;
+		background: $Marine-blue;
+		.dot {
+			appearance: none;
+			display: flex;
+			width: 0.815rem;
+			height: 0.815rem;
+			border-radius: 50%;
+			background: $White;
+			&:checked {
+				margin-left: auto;
+			}
+		}
+	}
+	.yearly-text {
+		font-weight: 700;
+		color: $Cool-gray;
+	}
 }
 // Global styles
-.button-dark {
-  font-weight: 500;
-  color: $White;
-
-  background-color: $Marine-blue;
+.button-dark,
+.text-btn {
+	font-weight: 500;
+	color: $White;
+  &.text-btn {
+    color: $Cool-gray;
+  }
+	&.button-dark {
+		background-color: $Marine-blue;
+    &:hover {
+      color: $White;
+    }
+	}
 }
 .input {
-  border: 1.5px solid $Light-gray;
-  outline: none;
-  color: $Marine-blue;
-  font-weight: 500;
-  &:focus {
-    border-color: $Pastel-blue;
-  }
+	border: 1.5px solid $Light-gray;
+	outline: none;
+	color: $Marine-blue;
+	font-weight: 500;
+	&:focus {
+		border-color: $Purplish-blue;
+	}
 }
 // Responsive
 @import "responsive";

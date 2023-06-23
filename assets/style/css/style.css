@@ -94,8 +94,8 @@ body {
   border: 1.5px solid #d6d9e6;
 }
 .options .option .input-radio:checked {
-  border-color: #adbeff;
-  background-color: rgba(173, 190, 255, 0.1);
+  border-color: #473dff;
+  background-color: rgba(71, 61, 255, 0.1);
 }
 .options .option .option-caption {
   display: flex;
@@ -115,6 +115,7 @@ body {
   color: #02295a;
   font-size: 0.8rem;
   font-weight: 500;
+  display: none;
 }
 
 .switch-container {
@@ -150,10 +151,22 @@ body {
   color: #9699ab;
 }
 
-.button-dark {
+.button-dark,
+.text-btn {
   font-weight: 500;
   color: #ffffff;
+}
+.button-dark.text-btn,
+.text-btn.text-btn {
+  color: #9699ab;
+}
+.button-dark.button-dark,
+.text-btn.button-dark {
   background-color: #02295a;
+}
+.button-dark.button-dark:hover,
+.text-btn.button-dark:hover {
+  color: #ffffff;
 }
 
 .input {
@@ -163,7 +176,7 @@ body {
   font-weight: 500;
 }
 .input:focus {
-  border-color: #adbeff;
+  border-color: #473dff;
 }
 
 @media only screen and (min-width: 768px) {
@@ -222,6 +235,12 @@ body {
     height: 100%;
     padding: 0;
     background: none;
+  }
+  .main .content-area .content-area-main .options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .main .content-area .content-area-main .options .option {
+    flex-direction: column;
   }
   .main .content-area .buttons-container {
     background: none;
