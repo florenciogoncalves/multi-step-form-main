@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multi step form main</title>
+		<link
+			rel="shortcut icon"
+			href="./assets/images/favicon-32x32.png"
+			type="image/x-icon" />
+		<link rel="stylesheet" href="./assets/style/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="./assets/style/css/style.css" />
+	</head>
+	<body class="d-flex flex-column">
+		<div
+			class="main d-flex flex-column h-100 col-md-10 col-lg-9 col-xl-8 col-xxl-7 m-md-auto p-md-3 rounded-4 pe-md-0">
+			<img
+				src="./assets/images/bg-sidebar-mobile.svg"
+				alt="mobile-sidebar"
+				class="sidebar-image-mobile d-md-none col-12 position-absolute" />
+			<div class="sidebar d-md-block col-md-5 rounded-4">
+				<img
+					src="./assets/images/bg-sidebar-desktop.svg"
+					alt="desktop-sidebar"
+					class="sidebar-image-desktop d-none d-md-block col-12 img-fluid h-100 w-100" />
+				<ul class="steps mx-auto mb-0">
+					<li class="step">
+						1
+						<div class="about d-none d-md-flex">
+							<p class="header-text">step 1</p>
+							<p class="desc-text">your info</p>
+						</div>
+					</li>
+					<li class="step active">
+						2
+						<div class="about d-none d-md-flex">
+							<p class="header-text">step 2</p>
+							<p class="desc-text">select a plan</p>
+						</div>
+					</li>
+					<li class="step">
+						3
+						<div class="about d-none d-md-flex">
+							<p class="header-text">step 3</p>
+							<p class="desc-text">add-ons</p>
+						</div>
+					</li>
+					<li class="step">
+						4
+						<div class="about d-none d-md-flex">
+							<p class="header-text">step 4</p>
+							<p class="desc-text">summary</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<form
+				class="content-area position-relative d-flex flex-column h-100 col-md-12 mx-md-auto px-md-4">
+				<div
+					class="content-width h-100 d-flex flex-column px-md-2 pt-md-3 pt-lg-4">
+					<div class="container p-md-0 p-md-0 px-lg-5">
+						<div class="content-area-main shadow-sm rounded-3 mb-3">
+							<h1 class="title">Select your plan</h1>
+							<p class="text pb-3">
+								You have the option of monthly or yearly billing.
+							</p>
+							<div class="options d-flex flex-column d-md-grid gap-3 gap-md-3 w-100 mb-2 pb-md-2">
+								<div class="option py-4 p-md-3">
+									<img
+										src="./assets/images/icon-arcade.svg"
+										class="option-img col-2 col-md-4 mb-md-4 mx-3 mx-md-0" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="arcade" />
+										<p class="_title">Arcade</p>
+										<p class="_value">$90/yr</p>
+										<p class="yearly-promotion">2 months free</p>
+									</div>
+								</div>
+								<div class="option py-4 p-md-3">
+									<img
+										src="./assets/images/icon-advanced.svg"
+										class="option-img col-2 col-md-4 mb-md-4 mx-3 mx-md-0" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="advanced" />
+										<p class="_title">Advanced</p>
+										<p class="_value">$120/yr</p>
+										<p class="yearly-promotion">2 months free</p>
+									</div>
+								</div>
+								<div class="option py-4 p-md-3">
+									<img
+										src="./assets/images/icon-pro.svg"
+										class="option-img col-2 col-md-4 mb-md-4 mx-3 mx-md-0" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="pro" />
+										<p class="_title">Pro</p>
+										<p class="_value">$150/yr</p>
+										<p class="yearly-promotion">2 months free</p>
+									</div>
+								</div>
+							</div>
+							<div class="switch-container p-3 rounded-3 mt-4">
+									<span class="monthly-text">Monthly</span>
+									<label for="dot" class="switch mx-4"><input type="checkbox" class="dot" id="dot"></label>
+									<span class="yearly-text">Yearly</span>
+								</div>
+						</div>
+					</div>
+					<div class="buttons-container mt-auto p-3 d-flex flex-row px-lg-5">
+						<a href="./index.html" class="btn text-btn px-3 py-2" type="submit">
+							Go Back
+						</a>
+						<button class="btn button-dark ms-auto px-3 py-2" type="submit">
+							Next Step
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
