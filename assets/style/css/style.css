@@ -78,6 +78,78 @@ body {
   background-color: #ffffff;
 }
 
+.options .option {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+.options .option .input-radio {
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1.5px solid #d6d9e6;
+}
+.options .option .input-radio:checked {
+  border-color: #adbeff;
+  background-color: rgba(173, 190, 255, 0.1);
+}
+.options .option .option-caption {
+  display: flex;
+  flex-direction: column;
+}
+.options .option .option-caption * {
+  margin: 0;
+}
+.options .option .option-caption ._title {
+  color: #02295a;
+  font-weight: 700;
+}
+.options .option .option-caption ._value {
+  color: #9699ab;
+}
+.options .option .option-caption .yearly-promotion {
+  color: #02295a;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.switch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(173, 190, 255, 0.1);
+}
+.switch-container .monthly-text {
+  font-weight: 700;
+  color: #02295a;
+}
+.switch-container .switch {
+  height: 1.285rem;
+  width: 2.5rem;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  background: #02295a;
+}
+.switch-container .switch .dot {
+  appearance: none;
+  display: flex;
+  width: 0.815rem;
+  height: 0.815rem;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.switch-container .switch .dot:checked {
+  margin-left: auto;
+}
+.switch-container .yearly-text {
+  font-weight: 700;
+  color: #9699ab;
+}
+
 .button-dark {
   font-weight: 500;
   color: #ffffff;
@@ -85,7 +157,7 @@ body {
 }
 
 .input {
-  border: 1px solid #d6d9e6;
+  border: 1.5px solid #d6d9e6;
   outline: none;
   color: #02295a;
   font-weight: 500;

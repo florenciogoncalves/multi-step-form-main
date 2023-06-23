@@ -24,14 +24,14 @@
 					alt="desktop-sidebar"
 					class="sidebar-image-desktop d-none d-md-block col-12 img-fluid h-100 w-100" />
 				<ul class="steps mx-auto mb-0">
-					<li class="step active">
+					<li class="step">
 						1
 						<div class="about d-none d-md-flex">
 							<p class="header-text">step 1</p>
 							<p class="desc-text">your info</p>
 						</div>
 					</li>
-					<li class="step">
+					<li class="step active">
 						2
 						<div class="about d-none d-md-flex">
 							<p class="header-text">step 2</p>
@@ -59,47 +59,61 @@
 				<div
 					class="content-width h-100 d-flex flex-column px-md-2 pt-md-3 pt-lg-4">
 					<div class="container p-md-0 p-md-0 px-lg-5">
-						<div class="content-area-main shadow-sm rounded-3">
-							<h1 class="title">Personal info</h1>
+						<div class="content-area-main shadow-sm rounded-3 mb-3">
+							<h1 class="title">Select your plan</h1>
 							<p class="text pb-3">
-								Please provide your name, email address, and phone number.
+								You have the option of monthly or yearly billing.
 							</p>
-							<div class="d-flex flex-column gap-3 gap-md-4 w-100 mb-2">
-								<div class="form-group">
-									<div class="label d-flex justify-content-between">
-										Name
-										<span class="alert-text d-none"
-											>This field is required</span
-										>
+							<div class="options d-flex flex-column gap-3 gap-md-4 w-100 mb-2">
+								<div class="option py-4">
+									<img
+										src="./assets/images/icon-arcade.svg"
+										class="option-img col-2 mx-3" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="arcade" />
+										<p class="_title">Arcade</p>
+										<p class="_value">$90/yr</p>
+										<p class="yearly-promotion">2 months free</p>
 									</div>
-									<input
-										class="input rounded-1 px-3 py-2 w-100"
-										type="text"
-										placeholder="e.g. Stephen King" />
 								</div>
-								<div class="form-group">
-									<div class="label d-flex justify-content-between">
-										Email Address
-										<span class="alert-text d-none"
-											>This field is required</span
-										>
+								<div class="option py-4">
+									<img
+										src="./assets/images/icon-advanced.svg"
+										class="option-img col-2 mx-3" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="advanced" />
+										<p class="_title">Advanced</p>
+										<p class="_value">$120/yr</p>
+										<p class="yearly-promotion">2 months free</p>
 									</div>
-									<input
-										class="input rounded-1 px-3 py-2 w-100"
-										type="email"
-										placeholder="e.g. stephenking@lorem.com" />
 								</div>
-								<div class="form-group">
-									<div class="label d-flex justify-content-between">
-										Phone Number
-										<span class="alert-text d-none"
-											>This field is required</span
-										>
+								<div class="option py-4">
+									<img
+										src="./assets/images/icon-pro.svg"
+										class="option-img col-2 mx-3" />
+									<div class="option-caption">
+										<input
+											type="radio"
+											class="input-radio rounded-3"
+											name="option"
+											value="pro" />
+										<p class="_title">Pro</p>
+										<p class="_value">$150/yr</p>
+										<p class="yearly-promotion">2 months free</p>
 									</div>
-									<input
-										class="input rounded-1 px-3 py-2 w-100"
-										type="tel"
-										placeholder="e.g. +1 234 567 890" />
+								</div>
+								<div class="switch-container p-3 rounded-3">
+									<span class="monthly-text">Monthly</span>
+									<labe for="dot" class="switch mx-4"><input type="checkbox" class="dot" id="dot"></labe>
+									<span class="yearly-text">Yearly</span>
 								</div>
 							</div>
 						</div>
