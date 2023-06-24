@@ -77,6 +77,12 @@ body {
 .content-area .buttons-container {
   background-color: #ffffff;
 }
+.content-area.step-2 .yearly-promotion {
+  display: none;
+}
+.content-area.step-2.yearly-view .yearly-promotion {
+  display: flex;
+}
 
 .options .option {
   width: 100%;
@@ -194,18 +200,27 @@ body {
 .text-btn {
   font-weight: 500;
   color: #ffffff;
+  transition: all 0.2s ease-in-out;
 }
 .button-dark.text-btn,
 .text-btn.text-btn {
   color: #9699ab;
 }
+.button-dark.text-btn:hover,
+.text-btn.text-btn:hover {
+  color: #02295a;
+}
 .button-dark.button-dark,
 .text-btn.button-dark {
   background-color: #02295a;
-}
-.button-dark.button-dark:hover,
-.text-btn.button-dark:hover {
   color: #ffffff;
+}
+.button-dark.button-dark:not(.confirm):hover, .button-dark.button-dark:not(.confirm):active,
+.text-btn.button-dark:not(.confirm):hover,
+.text-btn.button-dark:not(.confirm):active {
+  opacity: 0.875;
+  color: #ffffff;
+  background-color: #02295a;
 }
 .button-dark.button-dark.confirm,
 .text-btn.button-dark.confirm {
@@ -220,6 +235,19 @@ body {
 }
 .input:focus {
   border-color: #473dff;
+}
+
+.form-group .alert-text {
+  display: none;
+  color: #ed3548;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.form-group.wrong .alert-text {
+  display: flex;
+}
+.form-group.wrong .input {
+  border-color: #ed3548;
 }
 
 @media only screen and (min-width: 768px) {

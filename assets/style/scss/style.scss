@@ -61,6 +61,16 @@ body {
 	.buttons-container {
 		background-color: $White;
 	}
+	&.step-2 {
+		.yearly-promotion {
+			display: none;
+		}
+		&.yearly-view {
+			.yearly-promotion {
+				display: flex;
+			}
+		}
+	}
 }
 .options {
 	.option {
@@ -182,13 +192,21 @@ body {
 .text-btn {
 	font-weight: 500;
 	color: $White;
+	transition: all 0.2s ease-in-out;
 	&.text-btn {
 		color: $Cool-gray;
+		&:hover {
+			color: $Marine-blue;
+		}
 	}
 	&.button-dark {
 		background-color: $Marine-blue;
-		&:hover {
+		color: $White;
+		&:not(.confirm):hover,
+		&:not(.confirm):active {
+			opacity: 0.875;
 			color: $White;
+			background-color: $Marine-blue;
 		}
 		&.confirm {
 			background-color: $Purplish-blue;
@@ -202,6 +220,23 @@ body {
 	font-weight: 500;
 	&:focus {
 		border-color: $Purplish-blue;
+	}
+}
+// Form validation
+.form-group {
+	.alert-text {
+		display: none;
+		color: $Strawberry-red;
+		font-weight: 700;
+		font-size: 0.8rem;
+	}
+	&.wrong {
+		.alert-text {
+			display: flex;
+		}
+		.input {
+			border-color: $Strawberry-red;
+		}
 	}
 }
 // Responsive
