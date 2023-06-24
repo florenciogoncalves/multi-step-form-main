@@ -84,6 +84,17 @@ body {
   display: flex;
   align-items: flex-start;
 }
+.options .option .checkout {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid #9699ab;
+  border-radius: 0.25rem;
+}
+.options .option .checkout.checked {
+  border: none;
+  background: url(../../images/icon-checkmark.svg) no-repeat center, #473dff;
+  background-size: 60%;
+}
 .options .option .input-radio {
   appearance: none;
   width: 100%;
@@ -92,6 +103,7 @@ body {
   top: 0;
   left: 0;
   border: 1.5px solid #d6d9e6;
+  outline: none;
 }
 .options .option .input-radio:checked {
   border-color: #473dff;
@@ -116,6 +128,14 @@ body {
   font-size: 0.8rem;
   font-weight: 500;
 }
+.options .option .yearly-promotion.outside {
+  color: #473dff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.options._add-ons ._value {
+  font-size: 0.85rem;
+}
 
 .switch-container {
   display: flex;
@@ -133,6 +153,7 @@ body {
   padding: 0.25rem;
   border-radius: 0.75rem;
   background: #02295a;
+  cursor: pointer;
 }
 .switch-container .switch .dot {
   appearance: none;

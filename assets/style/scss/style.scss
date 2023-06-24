@@ -68,6 +68,17 @@ body {
 		position: relative;
 		display: flex;
 		align-items: flex-start;
+		.checkout {
+			width: 1.1rem;
+			height: 1.1rem;
+			border: 1px solid $Cool-gray;
+			border-radius: .25rem;
+			&.checked {
+				border: none;
+				background: url(../../images/icon-checkmark.svg) no-repeat center, $Purplish-blue;
+				background-size: 60%;
+			}
+		}
 		.input-radio {
 			appearance: none;
 			width: 100%;
@@ -76,6 +87,7 @@ body {
 			top: 0;
 			left: 0;
 			border: 1.5px solid $Light-gray;
+			outline: none;
 			&:checked {
 				border-color: $Purplish-blue;
 				background-color: rgba($color: $Purplish-blue, $alpha: 0.1);
@@ -100,6 +112,16 @@ body {
 				font-weight: 500;
 			}
 		}
+		.yearly-promotion.outside {
+			color: $Purplish-blue;
+			font-size: .85rem;
+			font-weight: 500;
+		}
+	}
+	&._add-ons {
+		._value {
+			font-size: .85rem;
+		}
 	}
 }
 .switch-container {
@@ -117,6 +139,7 @@ body {
 		padding: 0.25rem;
 		border-radius: 0.75rem;
 		background: $Marine-blue;
+		cursor: pointer;
 		.dot {
 			appearance: none;
 			display: flex;
