@@ -85,8 +85,8 @@ body {
   align-items: flex-start;
 }
 .options .option .checkout {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: 1.15rem;
+  height: 1.15rem;
   border: 1px solid #9699ab;
   border-radius: 0.25rem;
 }
@@ -171,6 +171,25 @@ body {
   color: #9699ab;
 }
 
+.finishing-values {
+  background-color: rgba(71, 61, 255, 0.05);
+}
+.finishing-values .change {
+  text-decoration: underline;
+}
+.finishing-values .text .title {
+  font-weight: 500 !important;
+}
+
+.total .title {
+  color: #473dff !important;
+}
+@media only screen and (min-width: 768px) {
+  .total .title {
+    font-size: 1.175rem;
+  }
+}
+
 .button-dark,
 .text-btn {
   font-weight: 500;
@@ -187,6 +206,10 @@ body {
 .button-dark.button-dark:hover,
 .text-btn.button-dark:hover {
   color: #ffffff;
+}
+.button-dark.button-dark.confirm,
+.text-btn.button-dark.confirm {
+  background-color: #473dff;
 }
 
 .input {

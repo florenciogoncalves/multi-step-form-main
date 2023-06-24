@@ -69,13 +69,14 @@ body {
 		display: flex;
 		align-items: flex-start;
 		.checkout {
-			width: 1.1rem;
-			height: 1.1rem;
+			width: 1.15rem;
+			height: 1.15rem;
 			border: 1px solid $Cool-gray;
-			border-radius: .25rem;
+			border-radius: 0.25rem;
 			&.checked {
 				border: none;
-				background: url(../../images/icon-checkmark.svg) no-repeat center, $Purplish-blue;
+				background: url(../../images/icon-checkmark.svg) no-repeat center,
+					$Purplish-blue;
 				background-size: 60%;
 			}
 		}
@@ -114,13 +115,13 @@ body {
 		}
 		.yearly-promotion.outside {
 			color: $Purplish-blue;
-			font-size: .85rem;
+			font-size: 0.85rem;
 			font-weight: 500;
 		}
 	}
 	&._add-ons {
 		._value {
-			font-size: .85rem;
+			font-size: 0.85rem;
 		}
 	}
 }
@@ -157,19 +158,41 @@ body {
 		color: $Cool-gray;
 	}
 }
+.finishing-values {
+	background-color: rgba($color: $Purplish-blue, $alpha: 0.05);
+	.change {
+		text-decoration: underline;
+	}
+	.text {
+		.title {
+			font-weight: 500 !important;
+		}
+	}
+}
+.total .title {
+	color: $Purplish-blue !important;
+	@media only screen and (min-width: 768px) {
+		& {
+			font-size: 1.175rem;
+		}
+	}
+}
 // Global styles
 .button-dark,
 .text-btn {
 	font-weight: 500;
 	color: $White;
-  &.text-btn {
-    color: $Cool-gray;
-  }
+	&.text-btn {
+		color: $Cool-gray;
+	}
 	&.button-dark {
 		background-color: $Marine-blue;
-    &:hover {
-      color: $White;
-    }
+		&:hover {
+			color: $White;
+		}
+		&.confirm {
+			background-color: $Purplish-blue;
+		}
 	}
 }
 .input {
