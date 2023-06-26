@@ -16,8 +16,13 @@ export default {
 		});
 	},
 	step3: function () {
-		console.log('Entramos aqui!')
 		// Radios
+		if(sessionStorage.yearly != 'true') {
+			document.querySelectorAll('.yearly-promotion').forEach(el => {
+			el.textContent = '+$' + parseInt(el.textContent.replace(/[^\d.-]/g, ""))*10 + '/yr'
+			})
+			
+		}
 		document.querySelectorAll(".options .input-radio").forEach((el) => {
 			el.addEventListener("change", () => {
 				if (el.checked)

@@ -2,8 +2,12 @@ import interactivity from "./interactivity.js";
 
 const form = document.querySelector(".content-area");
 
-form.classList.contains('step-2') ? interactivity.step2(form) : form.classList.contains('step-3') ? interactivity.step3() : '';
-
+form.classList.contains("step-2")
+	? interactivity.step2(form)
+	: form.classList.contains("step-3")
+	? interactivity.step3()
+	: "";
+// Forms pages
 form.addEventListener("submit", (evt) => {
 	evt.preventDefault();
 	// Step-1
@@ -74,13 +78,7 @@ form.addEventListener("submit", (evt) => {
 		let values = JSON.parse(
 			document.querySelector("[name='option']:checked").value.replace(/'/g, '"')
 		);
-		if (document.querySelector(".dot").checked) {
-			sessionStorage.yearly = true;
-			values.value *= 10;
-		}
-		else {
-			sessionStorage.yearly = false;
-		}
+		document.querySelector(".dot").checked ? sessionStorage.yearly = true : sessionStorage.yearly = false
 		sessionStorage.plan = values.plan;
 		sessionStorage.planValue = values.value;
 		window.location.href = `../../add-ons.html`;
@@ -88,13 +86,33 @@ form.addEventListener("submit", (evt) => {
 	// Step-3
 	if (form.classList.contains("step-3")) {
 		interactivity.step3();
-		let addOns = '{'
-		document.querySelectorAll('.input-radio:checked').forEach(el => {
-			addOns += (`"${[el.name]}" : ${sessionStorage.yearly == 'true' ? el.value * 10 : el.value},`)
-		})
-		addOns += '}'
-		console.log(addOns)
-		sessionStorage.addOns = addOns
-		window.location.href = '../../finishing.html'
+		let addOns = "{";
+		document.querySelectorAll(".input-radio:checked").forEach((el) => {
+			addOns += `"${[el.name]}" : ${
+				sessionStorage.yearly == "true" ? el.value * 10 : el.value
+			},`;
+		});
+		addOns += "}";
+		sessionStorage.addOns = addOns;
+		window.location.href = "../../finishing.html";
 	}
 });
+// Finishing page
+if (document.querySelector(".finishing-values")) {
+	const showValues = document.querySelector(".finishing-values");
+	function update() {
+		let planDurate = sessionStorage.yearly == 'true' ? 'yr' : 'mo'
+		// Show plan
+		showValues.querySelector(".show-plan").textContent = `${
+			sessionStorage.plan.charAt(0).toUpperCase() + sessionStorage.plan.slice(1)
+		} (${planDurate == "yr" ? "Yearly" : "Monthly"})`;
+		// Show plan value
+		showValues.querySelector('.show-plan-value').textContent = `$${sessionStorage.planValue * (planDurate == 'yr' ? 10 : 1)}/${planDurate}`
+		
+	}
+	update()
+	document.querySelector('.change').addEventListener('click', () => {
+		sessionStorage.yearly == 'true' ? sessionStorage.setItem('yearly', 'false') : sessionStorage.setItem('yearly', 'true')
+		update()
+	})
+}
