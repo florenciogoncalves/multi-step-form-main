@@ -78,7 +78,9 @@ form.addEventListener("submit", (evt) => {
 		let values = JSON.parse(
 			document.querySelector("[name='option']:checked").value.replace(/'/g, '"')
 		);
-		document.querySelector(".dot").checked ? sessionStorage.yearly = true : sessionStorage.yearly = false
+		document.querySelector(".dot").checked
+			? (sessionStorage.yearly = true)
+			: (sessionStorage.yearly = false);
 		sessionStorage.plan = values.plan;
 		sessionStorage.planValue = values.value;
 		window.location.href = `../../add-ons.html`;
@@ -86,33 +88,69 @@ form.addEventListener("submit", (evt) => {
 	// Step-3
 	if (form.classList.contains("step-3")) {
 		interactivity.step3();
-		let addOns = "{";
-		document.querySelectorAll(".input-radio:checked").forEach((el) => {
-			addOns += `"${[el.name]}" : ${
-				sessionStorage.yearly == "true" ? el.value * 10 : el.value
-			},`;
+		let addOns = "[";
+		let checkedRad = document.querySelectorAll(".input-radio:checked");
+		checkedRad.forEach((el, idx) => {
+			addOns += `{'name' : '${[el.name]}', 'value' : ${el.value}}${
+				idx == checkedRad.length - 1 ? "" : ","
+			}`;
 		});
-		addOns += "}";
+		addOns += "]";
 		sessionStorage.addOns = addOns;
 		window.location.href = "../../finishing.html";
 	}
 });
 // Finishing page
 if (document.querySelector(".finishing-values")) {
+	// Finishing value
+	let finishValue = parseInt(sessionStorage.planValue)
 	const showValues = document.querySelector(".finishing-values");
+
+	
 	function update() {
-		let planDurate = sessionStorage.yearly == 'true' ? 'yr' : 'mo'
+		let planDurate = sessionStorage.yearly == "true" ? "yr" : "mo";
 		// Show plan
 		showValues.querySelector(".show-plan").textContent = `${
 			sessionStorage.plan.charAt(0).toUpperCase() + sessionStorage.plan.slice(1)
 		} (${planDurate == "yr" ? "Yearly" : "Monthly"})`;
 		// Show plan value
-		showValues.querySelector('.show-plan-value').textContent = `$${sessionStorage.planValue * (planDurate == 'yr' ? 10 : 1)}/${planDurate}`
-		
+		showValues.querySelector(".show-plan-value").textContent = `$${
+			sessionStorage.planValue * (planDurate == "yr" ? 10 : 1)
+		}/${planDurate}`;
+		document.querySelector('.value-per').textContent = planDurate == 'yr' ? 'year' : 'month'
+		// Change values on the screen based on yr or mo
+		document.querySelectorAll('.change-value').forEach(val => {
+			let txtContent = parseInt(val.textContent.replace(/[^\d.-]/g, ""))
+			val.textContent = '+$' + parseInt(val.getAttribute('value')) *  (planDurate == 'yr' ? 10 : 1) + '/' + planDurate
+			if (val.classList.contains('final-value'))
+			val.textContent = '+$' + finishValue *  (planDurate == 'yr' ? 10 : 1) + '/' + planDurate
+		})
 	}
-	update()
-	document.querySelector('.change').addEventListener('click', () => {
-		sessionStorage.yearly == 'true' ? sessionStorage.setItem('yearly', 'false') : sessionStorage.setItem('yearly', 'true')
-		update()
-	})
+	
+
+	// Show add-ons
+		let planDurate = sessionStorage.yearly == "true" ? "yr" : "mo";
+		let addOns = JSON.parse(sessionStorage.addOns.replace(/'/g, '"'));
+		const insertAddOns = document.querySelector(".insert-values");
+		// List selected add-ons on finishing page
+		addOns.forEach((ele) => {
+			insertAddOns.innerHTML += `<p class="text w-100 d-flex">${ele.name
+				.split("-")
+				.map(function (word) {
+					return word.charAt(0).toUpperCase() + word.slice(1);
+				})
+				.join(" ")}<span class="title change-value month ms-auto" value="${ele.value}">+$${
+				planDurate == "yr" ? ele.value * 10 : ele.value}/${planDurate}</span></p>`;
+			finishValue += ele.value
+		});
+		// Show final montant
+		document.querySelector('.final-value').textContent = '+$' + finishValue + '/' + planDurate
+	update();
+	// Change vizualization yr <-> mo
+	document.querySelector(".change").addEventListener("click", () => {
+		sessionStorage.yearly == "true"
+			? sessionStorage.setItem("yearly", "false")
+			: sessionStorage.setItem("yearly", "true");
+		update();
+	});
 }
