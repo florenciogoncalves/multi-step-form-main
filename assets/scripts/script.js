@@ -153,4 +153,7 @@ if (document.querySelector(".finishing-values")) {
 			: sessionStorage.setItem("yearly", "true");
 		update();
 	});
-}
+	document.querySelector('.btn.confirm').addEventListener('click', () => {
+		window.location.href = '../../done.html'
+	})
+}	
