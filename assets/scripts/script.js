@@ -69,5 +69,17 @@ if (form.classList.contains("step-1")) {
 // Step-2
 if (form.classList.contains("step-2")) {
 	interactivity.step2(form);
-  form.addEventListener
+	form.addEventListener("submit", (evt) => {
+		evt.preventDefault();
+		let values = JSON.parse(
+			document.querySelector("[name='option']:checked").value.replace(/'/g, '"')
+		);
+		if (document.querySelector(".dot").checked) {
+			sessionStorage.yearly = true;
+			values.value *= 10;
+		}
+		sessionStorage.plan = values.plan;
+		sessionStorage.planValue = values.value;
+		window.location.href = `../../add-ons.html`;
+	});
 }
